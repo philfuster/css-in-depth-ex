@@ -1,0 +1,85 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #eee;
+  font-family: Helvetic, Arial, sans-serif;
+}
+
+header {
+  padding: 1em 1.5em;
+  color: #fff;
+  background-color: #0072b0;
+  border-radius: 0.5em;
+}
+
+main {
+  display: block;
+}
+
+.container {
+  display: flex;
+}
+
+.main {
+  width: 70%;
+  padding: 1em 1.5em;
+  background-color: #fff;
+  border-radius: 0.5em;
+}
+
+.sidebar {
+  width: 30%;
+  padding: 1.5em;
+  /* This removes the margin-top that is added by the lobotimzed owl selector * + *
+  */
+  margin-top: 0;
+  margin-left: 1.5em;
+  background-color: #fff;
+  border-radius: 0.5em;
+}
+
+.button-link {
+  display: block;
+  padding: 0.5em;
+  color: #fff;
+  background-color: #0090c9;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.sponsor-link {
+  display: block;
+  color: #0072b0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/*
+  Only target elements with class .button-link that follow
+  other elements with class .button-link.
+  This is a solution to a situation where the 1st child's padding is combining
+  with its parents padding and creating uneven padding compared to the
+  other sides(left, right, bottom).
+
+.button-link + .button-link {
+  margin-top: 1.5em;
+} */
+
+/* 
+  A better version of this fix above where every element that follows an element
+  has a margin-top 1.5 em. This fixes the margin problem for all elements in most cases.
+  But this can have unwanted side effects. Like for instance on this page, the aside
+  follows directly after the main tag. Giving aside a margin top.
+*/
+body * + * {
+  margin-top: 1.5em;
+}

@@ -1,0 +1,58 @@
+:root {
+  /*
+    box-sizing default property is content-box. Which does not include padding
+    and border when calculating an items width and height. This can cause some
+    confusion when trying to figure out the width or height of an item based on styling.
+    Especially when using two different units like em and px.
+    So to fix this, set box-sizing to border-box.
+    When calculating the width/height of an item, it includes the padding.
+    So adding padding doesn't change the width of the item, but the content size
+    of the item.
+    So if you increase padding, the width doesn't get bigger on an element.
+  */
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  /* 
+    If I set box-sizing to border-box on all elements with * selector this could
+    implact 3rd party CSS libraries negatively. To fix this I set it on the root element
+    and have all other elements inherit it.
+    That way I can convert a third-party component into a content-box when necessary by 
+    targeting its top level component.
+    box-sizing isn't usually in inheritable property to but setting it to inherit
+    forces it to be.
+   */
+  box-sizing: inherit;
+}
+body {
+  background-color: #eee;
+  font-family: Helvetic, Arial, sans-serif;
+}
+
+header {
+  color: #fff;
+  background-color: #0072b0;
+  border-radius: 0.5em;
+}
+
+main {
+  display: block;
+}
+
+.main {
+  float: left;
+  width: 70%;
+  background-color: #fff;
+  border-radius: 0.5em;
+}
+
+.sidebar {
+  float: left;
+  width: calc(30% - 1.5em);
+  margin-left: 1.5em;
+  padding: 1.5em;
+  background-color: #fff;
+  border-radius: 0.5em;
+}
