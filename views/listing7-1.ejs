@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/listing7-1.css" />
+    <title>Listing7-1 Positioning and Stacking Contexts</title>
+  </head>
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          Find out what's going on at Wombat Coffee each month. Sign up for our
+          newsletter:
+        </p>
+        <button id="open">Sign up</button>
+      </div>
+    </header>
+    <div class="modal" id="modal">
+      <div class="modal-backdrop">
+        <div class="modal-body">
+          <button class="modal-close" id="close">close</button>
+          <h2>Wombat Newsletter</h2>
+          <p>Sign up for your monthly newsletter. No spam. We Promise!</p>
+          <form>
+            <p>
+              <label for="email">Email address:</label>
+              <input type="text" name="email" />
+            </p>
+            <p><button type="submit">Submit</button></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <nav>
+        <div class="dropdown">
+          <div class="dropdown-label">
+            Main Menu
+          </div>
+          <div class="dropdown-menu">
+            <ul class="submenu">
+              <li><a href="/">Home</a></li>
+              <li><a href="/coffees">Coffees</a></li>
+              <li><a href="/brewers">Brewers</a></li>
+              <li><a href="/specials">Specials</a></li>
+              <li><a href="/about">About us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1>Wombat Coffee Roasters</h1>
+    </div>
+    <script type="text/javascript">
+      var button = document.getElementById('open');
+      var close = document.getElementById('close');
+      var modal = document.getElementById('modal');
+
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        modal.style.display = 'block';
+      });
+
+      close.addEventListener('click', function (event) {
+        event.preventDefault();
+        modal.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
