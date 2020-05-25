@@ -3,29 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Index</title>
   </head>
   <body>
     <h1>Welcome to my css-in-depth journey</h1>
-    <p>Naming scheme is described as follows: </p>
+    <p>Naming scheme is described as follows:</p>
     <p><em>listing</em> is the base name</p>
-    <p>Following <em>listing</em> is the chapter number followed by a separator <strong>-</strong> EX: <strong>3-</strong></p>
+    <p>
+      Following <em>listing</em> is the chapter number followed by a separator
+      <strong>-</strong> EX: <strong>3-</strong>
+    </p>
     <p>Followed by a <em>figure number</em> ie <strong>8</strong></p>
     <p>Full Example: <strong>listing3-8.ejs</strong></p>
-    <aside><em>Side Note: ejs is used because its render function makes life easy and plain 
-      HTML renders in ejs files.
-    </em></aside>
-    <br>
-    <p>When looking at the file structure, if <em>figure number</em> jumps. Ex:</p>
-    <br>
+    <aside>
+      <em
+        >Side Note: ejs is used because its render function makes life easy and
+        plain HTML renders in ejs files.
+      </em>
+    </aside>
+    <br />
+    <p>
+      When looking at the file structure, if <em>figure number</em> jumps. Ex:
+    </p>
+    <br />
     <p>listing3-2</p>
     <p>listing3-10</p>
-    <br>
+    <br />
     <p>This means figures 3 through 9 are included in listing3-2.</p>
-    <p>In most cases it means listings 3-2 through 3-9 were relatively the same screen which was
-      built upon over the figures. For more information on those specific changes refer to the chapter.
+    <p>
+      In most cases it means listings 3-2 through 3-9 were relatively the same
+      screen which was built upon over the figures. For more information on
+      those specific changes refer to the chapter.
     </p>
-    </p>
+    <ul>
+      <% listings.forEach(function (listing){%>
+      <li>
+        <a href="/<%= listing %>"> <%= listing%> </a>
+      </li>
+      <%});%>
+    </ul>
   </body>
 </html>
